@@ -1,0 +1,122 @@
+// import nib for cross browser features
+@import 'nib'
+@import 'rupture'
+  
+*, *:before, *:after
+  box-sizing inherit
+  
+
+.container-fluid
+  margin-right auto
+  margin-left auto
+  padding-right 2rem
+  padding-left 2rem
+
+.row
+  box-sizing border-box
+  display flex
+  flex 0 1 auto
+  flex-direction row
+  flex-wrap wrap
+  margin-right -0.5rem
+  margin-left -0.5rem
+  
+.row.reverse
+  flex-direction: row-reverse;
+
+.col.reverse
+  flex-direction: column-reverse;
+
+build($a)
+  .col-{$a},
+  .col-{$a}-1,
+  .col-{$a}-2,
+  .col-{$a}-3,
+  .col-{$a}-4,
+  .col-{$a}-5,
+  .col-{$a}-6,
+  .col-{$a}-7,
+  .col-{$a}-8,
+  .col-{$a}-9,
+  .col-{$a}-10,
+  .col-{$a}-11,
+  .col-{$a}-12,
+  .col-{$a}-offset-1,
+  .col-{$a}-offset-2,
+  .col-{$a}-offset-3,
+  .col-{$a}-offset-4,
+  .col-{$a}-offset-5,
+  .col-{$a}-offset-6,
+  .col-{$a}-offset-7,
+  .col-{$a}-offset-8,
+  .col-{$a}-offset-9,
+  .col-{$a}-offset-10,
+  .col-{$a}-offset-11,
+  .col-{$a}-offset-12
+    box-sizing border-box
+    display flex
+    flex 0 1 auto
+    flex-direction column
+    flex-grow 0
+    flex-shrink 0
+    padding-right 0.5rem
+    padding-left 0.5rem
+
+  .col-{$a} 
+    flex-grow 1
+    flex-basis 0
+    max-width 100%
+
+  .row.collapse
+    [class^='col-'],[class*=' col-']
+      padding-right 0
+      padding-left 0
+
+  for num in (1..12)
+    .col-{$a}-{num}
+      -ms-flex-preferred-size (100% / 12) * num
+      flex-basis (100% / 12) * num
+      max-width (100% / 12) * num
+
+  for num in (1..12)
+    .col-{$a}-offset-{num}
+      margin-left (100% / 12) * num
+
+  .start-{$a}
+    justify-content flex-start
+    text-align start
+  .center-{$a}
+    justify-content center
+    text-align center
+  .end-{$a}
+    justify-content flex-end
+    text-align end
+  .top-{$a}
+    align-items flex-start
+  .middle-{$a}
+    align-items center
+  .fill-{$a}
+    [class^='col-'],[class*=' col-']
+      flex 1
+  .bottom-{$a}
+    align-items flex-end
+  .around-{$a}
+    justify-content space-around
+  .between-{$a}
+    justify-content space-between
+  .first-{$a}
+    order -1
+  .last-{$a}
+    order 1
+  
+
+build(xs);
+
++above(48em)
+  build(sm);
+
++above(62em)
+  build(md);
+
++above(75em)
+  build(lg);

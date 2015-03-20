@@ -1,0 +1,20 @@
+{
+  "name": "phlex-box",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "start": "./node_modules/stylus/bin/stylus -u nib -u rupture -w src"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nib": "^1.1.0",
+    "rupture": "^0.6.1",
+    "stylus": "^0.50.0"
+  }
+}
