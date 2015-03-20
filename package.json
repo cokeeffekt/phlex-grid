@@ -7,10 +7,10 @@
     "example": "example"
   },
   "scripts": {
-    "start": "./node_modules/stylus/bin/stylus -u nib -u rupture -w src"
+    "start": "./node_modules/stylus/bin/stylus -u nib -u rupture -w src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Patrik Hartwig",
   "license": "ISC",
   "dependencies": {
     "nib": "^1.1.0",

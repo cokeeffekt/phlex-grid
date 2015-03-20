@@ -2,15 +2,12 @@
 @import 'nib'
 @import 'rupture'
   
-*, *:before, *:after
-  box-sizing inherit
-  
+html, body 
+  height 100%
+  font-size 100%
 
-.container-fluid
-  margin-right auto
-  margin-left auto
-  padding-right 2rem
-  padding-left 2rem
+*,*:before,*:after
+  box-sizing border-box
 
 .row
   box-sizing border-box
@@ -28,31 +25,31 @@
   flex-direction: column-reverse;
 
 build($a)
-  .col-{$a},
-  .col-{$a}-1,
-  .col-{$a}-2,
-  .col-{$a}-3,
-  .col-{$a}-4,
-  .col-{$a}-5,
-  .col-{$a}-6,
-  .col-{$a}-7,
-  .col-{$a}-8,
-  .col-{$a}-9,
-  .col-{$a}-10,
-  .col-{$a}-11,
-  .col-{$a}-12,
-  .col-{$a}-offset-1,
-  .col-{$a}-offset-2,
-  .col-{$a}-offset-3,
-  .col-{$a}-offset-4,
-  .col-{$a}-offset-5,
-  .col-{$a}-offset-6,
-  .col-{$a}-offset-7,
-  .col-{$a}-offset-8,
-  .col-{$a}-offset-9,
-  .col-{$a}-offset-10,
-  .col-{$a}-offset-11,
-  .col-{$a}-offset-12
+  .{$a},
+  .{$a}-1,
+  .{$a}-2,
+  .{$a}-3,
+  .{$a}-4,
+  .{$a}-5,
+  .{$a}-6,
+  .{$a}-7,
+  .{$a}-8,
+  .{$a}-9,
+  .{$a}-10,
+  .{$a}-11,
+  .{$a}-12,
+  .{$a}-offset-1,
+  .{$a}-offset-2,
+  .{$a}-offset-3,
+  .{$a}-offset-4,
+  .{$a}-offset-5,
+  .{$a}-offset-6,
+  .{$a}-offset-7,
+  .{$a}-offset-8,
+  .{$a}-offset-9,
+  .{$a}-offset-10,
+  .{$a}-offset-11,
+  .{$a}-offset-12
     box-sizing border-box
     display flex
     flex 0 1 auto
@@ -62,61 +59,60 @@ build($a)
     padding-right 0.5rem
     padding-left 0.5rem
 
-  .col-{$a} 
+  .{$a} 
     flex-grow 1
     flex-basis 0
     max-width 100%
 
   .row.collapse
+    padding-right 0.5rem
+    padding-left 0.5rem
     [class^='col-'],[class*=' col-']
       padding-right 0
       padding-left 0
 
   for num in (1..12)
-    .col-{$a}-{num}
+    .{$a}-{num}
       -ms-flex-preferred-size (100% / 12) * num
       flex-basis (100% / 12) * num
       max-width (100% / 12) * num
 
   for num in (1..12)
-    .col-{$a}-offset-{num}
+    .{$a}-offset-{num}
       margin-left (100% / 12) * num
 
-  .start-{$a}
+  .{$a}-start
     justify-content flex-start
     text-align start
-  .center-{$a}
+  .{$a}-center
     justify-content center
     text-align center
-  .end-{$a}
+  .{$a}-end
     justify-content flex-end
     text-align end
-  .top-{$a}
+  .{$a}-top
     align-items flex-start
-  .middle-{$a}
+  .{$a}-middle
     align-items center
-  .fill-{$a}
+  .{$a}-fill
     [class^='col-'],[class*=' col-']
       flex 1
-  .bottom-{$a}
+  .{$a}-bottom
     align-items flex-end
-  .around-{$a}
+  .{$a}-around
     justify-content space-around
-  .between-{$a}
+  .{$a}-between
     justify-content space-between
-  .first-{$a}
+  .{$a}-first
     order -1
-  .last-{$a}
+  .{$a}-last
     order 1
   
 
-build(xs);
+build(small);
 
 +above(48em)
-  build(sm);
+  build(medium);
 
 +above(62em)
-  build(md);
-
-+above(75em)
-  build(lg);
+  build(large);
