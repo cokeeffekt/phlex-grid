@@ -67,7 +67,7 @@ build($a)
   .row.collapse
     padding-right 0.5rem
     padding-left 0.5rem
-    [class^='col-'],[class*=' col-']
+    [class*="small-"],[class*="medium-"],[class*="large-"]
       padding-right 0
       padding-left 0
 
@@ -95,7 +95,7 @@ build($a)
   .{$a}-middle
     align-items center
   .{$a}-fill
-    [class^='col-'],[class*=' col-']
+    [class*="small-"],[class*="medium-"],[class*="large-"]
       flex 1
   .{$a}-bottom
     align-items flex-end
@@ -108,11 +108,20 @@ build($a)
   .{$a}-last
     order 1
   
+  .{$a}-hide
+    display: none !important;
 
-build(small);
+  .{$a}-show
+    display inherit !important
+
+
+build(small)
 
 +above(48em)
-  build(medium);
+  build(medium)
 
 +above(62em)
-  build(large);
+  build(large)
+
++above(90em)
+  build(xlarge)
